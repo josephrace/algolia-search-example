@@ -1,0 +1,30 @@
+.app {
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
+  min-height: 517px;
+  max-width: 820px;
+  margin: 50px auto;
+}
+
+.header {
+  background: #1c688e;
+  display: flex;
+}
+
+.sidebar-main {
+  display: flex;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  padding: 25px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+  padding: 25px 25px 25px 30px;
+}

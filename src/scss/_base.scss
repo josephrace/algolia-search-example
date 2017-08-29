@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  color: #333333;
+  background-image: url(/assets/images/background.png);
+  background-size: 49px 29px;
+
+  @include retina-devices() {
+    background-image: url(/assets/images/background_@2x.png);
+  }
+}

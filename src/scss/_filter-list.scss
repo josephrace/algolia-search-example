@@ -1,0 +1,42 @@
+.filter-list {
+  margin-bottom: 20px;
+}
+
+.filter-list__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.filter-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 14px 5px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+
+  &--active,
+  &:hover {
+    background-color: #2897c5;
+
+    .filter-list-item__name,
+    .filter-list-item__count {
+      color: #ffffff;
+    }
+  }
+}
+
+.filter-list-item__name {
+  color: #000000;
+}
+
+.filter-list-item__count {
+  color: #9a9a9a;
+}
+
+.rating-filter-list {
+  .star-rating {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+}
