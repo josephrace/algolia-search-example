@@ -42130,7 +42130,8 @@ var App = function (_Component) {
       totalPages: null,
       responseTime: null,
       hits: [],
-      facets: []
+      facets: [],
+      ratingFilter: null
     };
 
     _this.handleSearch = _this.handleSearch.bind(_this);
@@ -42210,7 +42211,7 @@ var App = function (_Component) {
     key: 'handleRatingSelection',
     value: function handleRatingSelection(val) {
       this._searchHelper.removeNumericRefinement('stars_count', '>=').addNumericRefinement('stars_count', '>=', val).search();
-      this.setState({ busy: true, appendHits: false });
+      this.setState({ ratingFilter: val, busy: true, appendHits: false });
     }
 
     /**
@@ -42297,7 +42298,8 @@ var App = function (_Component) {
               onSelect: this.handleFacetSelection
             }),
             _react2.default.createElement(_RatingFilterList2.default, {
-              onSelect: this.handleRatingSelection
+              onSelect: this.handleRatingSelection,
+              ratingFilter: this.state.ratingFilter
             }),
             _react2.default.createElement(_FilterList2.default, {
               listKey: 'payment_options',
@@ -42428,16 +42430,21 @@ var _StarRating2 = _interopRequireDefault(_StarRating);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RatingFilterList = function RatingFilterList(_ref) {
-  var onSelect = _ref.onSelect;
+  var onSelect = _ref.onSelect,
+      ratingFilter = _ref.ratingFilter;
 
   var filters = [];
 
   var _loop = function _loop(i) {
     var filter = _react2.default.createElement(
       'div',
-      { key: i, onClick: function onClick() {
+      {
+        key: i,
+        onClick: function onClick() {
           onSelect(i);
-        } },
+        },
+        style: { opacity: ratingFilter && ratingFilter !== i ? '0.4' : '1' }
+      },
       _react2.default.createElement(_StarRating2.default, { rating: i })
     );
 

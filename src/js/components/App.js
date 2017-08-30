@@ -24,7 +24,8 @@ class App extends Component {
       totalPages: null,
       responseTime: null,
       hits: [],
-      facets: []
+      facets: [],
+      ratingFilter: null
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -93,7 +94,7 @@ class App extends Component {
       .removeNumericRefinement('stars_count', '>=')
       .addNumericRefinement('stars_count', '>=', val)
       .search();
-    this.setState({ busy: true, appendHits: false });
+    this.setState({ ratingFilter: val, busy: true, appendHits: false });
   }
 
   /**
@@ -165,6 +166,7 @@ class App extends Component {
                 />
                 <RatingFilterList
                   onSelect={this.handleRatingSelection}
+                  ratingFilter={this.state.ratingFilter}
                 />
                 <FilterList
                   listKey="payment_options"
