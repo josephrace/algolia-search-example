@@ -13,12 +13,12 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 13px;
   color: #333333;
-  background-image: url(/assets/images/background.png);
+  background-image: url(assets/images/background.png);
   background-size: 49px 29px; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     /* line 11, /Users/joseph/Projects/Algolia/solutions-hiring-assignment/src/scss/_base.scss */
     body {
-      background-image: url(/assets/images/background_@2x.png); } }
+      background-image: url(assets/images/background_@2x.png); } }
 
 /* line 1, /Users/joseph/Projects/Algolia/solutions-hiring-assignment/src/scss/_app.scss */
 .app {
