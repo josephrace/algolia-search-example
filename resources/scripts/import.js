@@ -7,6 +7,8 @@
  * - Adds data to Algolia 'restaurants' index
  */
 
+require('dotenv').config();
+
 const util = require('util');
 const fs = require('fs');
 const path = require('path');
@@ -16,8 +18,8 @@ const algoliasearch = require('algoliasearch');
 const readFile = util.promisify(fs.readFile);
 const csvParse = util.promisify(csv.parse);
 
-const appId = 'IB8J29SC3C';
-const apiKey = '55e711d60665c159dde474fc5b655cc3';
+const appId = process.env.ALGOLIA_APP_ID;
+const apiKey = process.env.ALGOLIA_ADMIN_KEY;
 const client = algoliasearch(appId, apiKey);
 const index = client.initIndex('restaurants');
 

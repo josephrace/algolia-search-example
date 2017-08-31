@@ -23,6 +23,7 @@
   "dependencies": {
     "algoliasearch": "^3.24.3",
     "algoliasearch-helper": "^2.21.2",
+    "dotenv": "^4.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
